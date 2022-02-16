@@ -34,4 +34,12 @@ func main() {
 		fmt.Println(index)
 		fmt.Println(value)
 	}
+
+	array := [12]int{1}
+	fmt.Println(array)
+
+	myInterface := []interface{}{}
+	myInterface = append(myInterface, "hola")
+	fmt.Println(myInterface...)
+
 }
