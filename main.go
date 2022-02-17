@@ -3,9 +3,17 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
+func doSomething(c chan int) {
+	time.Sleep(3 * time.Second)
+	fmt.Println("Done")
+	c <- 1
+}
+
 func main() {
+
 	var x int
 	x = 8
 	y := 7
@@ -13,6 +21,7 @@ func main() {
 	fmt.Println(x)
 	fmt.Println(y)
 	myValue, err := strconv.ParseInt("l", 0, 64)
+
 	if err != nil {
 		fmt.Println("%v", err)
 	} else {
@@ -41,5 +50,19 @@ func main() {
 	myInterface := []interface{}{}
 	myInterface = append(myInterface, "hola")
 	fmt.Println(myInterface...)
+
+	// c := make(chan int)
+	// go doSomething(c)
+	// <-c
+
+	g := 25
+	fmt.Println(g)
+	h := &g
+	fmt.Println(h)
+
+	var c []int
+	d := []int{}
+	c = append(c, 25)
+	fmt.Print(c, d)
 
 }
