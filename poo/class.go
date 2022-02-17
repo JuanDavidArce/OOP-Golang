@@ -2,40 +2,28 @@ package main
 
 import "fmt"
 
+type Person struct {
+	name string
+	age  int
+}
+
 type Employee struct {
-	id       int
-	name     string
-	vacation bool
+	id int
 }
 
-func NewEmployee(id int, name string, vacation bool) *Employee {
-	return &Employee{
-		id:       id,
-		name:     name,
-		vacation: vacation,
-	}
+type FullTimeEmployee struct {
+	Person
+	Employee
 }
 
+func GetMessage(p Person) {
+	fmt.Println("%s with age %d", p.name, p.age)
+}
 func main() {
-	// 1
-	e := Employee{}
-	fmt.Println(e)
-
-	// 2
-	e2 := Employee{
-		id:       1,
-		name:     "Name",
-		vacation: true,
-	}
-	fmt.Println(e2)
-
-	// 3
-	e3 := new(Employee)
-	fmt.Println(*e3)
-	e3.id = 1
-	e3.name = "Name"
-	fmt.Println(*e3)
-
-	e4 := NewEmployee(1, "Names", false)
-	fmt.Println(*e4)
+	ftEmplyee := FullTimeEmployee{}
+	ftEmplyee.name = "Juan David"
+	ftEmplyee.age = 2
+	ftEmplyee.id = 15
+	fmt.Println(ftEmplyee)
+	GetMessage(ftEmplyee)
 }
