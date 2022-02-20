@@ -43,6 +43,7 @@ func main() {
 	ftEmployee.name = "Juan David"
 	ftEmployee.age = 2
 	ftEmployee.id = 15
+	ftEmployee.getMessage()
 	fmt.Println(ftEmployee)
 	tEmployee := TemporaryEmployee{}
 	getMessage(tEmployee)
