@@ -12,3 +12,11 @@ func GetMax(x, y int) int {
 	}
 
 }
+
+func Fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	} else {
+		return Fibonacci(n-1) + Fibonacci(n-2)
+	}
+}
