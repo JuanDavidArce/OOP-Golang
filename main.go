@@ -23,7 +23,7 @@ func main() {
 	myValue, err := strconv.ParseInt("l", 0, 64)
 
 	if err != nil {
-		fmt.Println("%v", err)
+		fmt.Println(err)
 	} else {
 		fmt.Println(myValue)
 	}
